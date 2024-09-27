@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/Nothing">
+
+    <fragment
+        android:id="@+id/Nothing"
+        android:name="de.tubs.cs.ias.firebaseanalyticstestbed.Nothing"
+        android:label="Initialize"
+        tools:layout="@layout/fragment_nothing">
+
+        <action
+            android:id="@+id/action_Nothing_to_CreateObject"
+            app:destination="@id/CreateObject" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CreateObject"
+        android:name="de.tubs.cs.ias.firebaseanalyticstestbed.CreateObject"
+        android:label="Create Object"
+        tools:layout="@layout/fragment_create_object">
+
+        <action
+            android:id="@+id/action_CreateObject_to_Consent"
+            app:destination="@id/Initialize" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Initialize"
+        android:name="de.tubs.cs.ias.firebaseanalyticstestbed.Initialize"
+        android:label="Initialize"
+        tools:layout="@layout/fragment_initialize">
+
+        <action
+            android:id="@+id/action_Initialize_to_BasicFunctionality"
+            app:destination="@id/Consent" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/Consent"
+        android:name="de.tubs.cs.ias.firebaseanalyticstestbed.Consent"
+        android:label="Consent"
+        tools:layout="@layout/fragment_consent">
+
+        <action
+            android:id="@+id/action_Consent_to_Initialize"
+            app:destination="@id/BasicFunctionality" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/BasicFunctionality"
+        android:name="de.tubs.cs.ias.firebaseanalyticstestbed.BasicFunctionality"
+        android:label="Consent"
+        tools:layout="@layout/fragment_basic_functionality">
+    </fragment>
+
+</navigation>
